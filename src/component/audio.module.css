@@ -1,0 +1,33 @@
+.audio, .buttons {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    gap: 48px;
+}
+.audio {
+    flex-direction: column;
+}
+.buttons {
+    flex-direction: row;
+}
+.callButton, .endButton {
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+.callButton:disabled, .endButton:disabled {
+    cursor: not-allowed;
+    background: inherit;
+    color: black;
+}
+.callButton {
+    background: green;
+}
+.endButton {
+    background: red;
+}
