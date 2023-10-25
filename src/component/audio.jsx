@@ -53,14 +53,14 @@ const ContinuousAudioRecorder = () => {
       const speechEvents = hark(stream, options);
       setSpeechEvents(speechEvents);
       speechEvents.on("speaking", () => {
-        if (isPlaying) return;
+        if (isPlaying || isloading) return;
         console.log("User is speaking");
         if (recorder.state === "inactive") {
           recorder.start(); // Start a new recording session when user starts speaking
         }
       });
       speechEvents.on("stopped_speaking", () => {
-        if (isPlaying) return;
+        if (isPlaying || isloading) return;
         console.log("User stopped speaking");
         if (recorder.state === "recording") {
           recorder.stop(); // Stop recording when user stops speaking
